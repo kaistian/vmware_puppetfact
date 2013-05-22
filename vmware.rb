@@ -9,6 +9,7 @@
 # ESXi 4.1u2 800380 ( Address: 0xEA2E0 Release Date: 04/15/2011)
 # ESXi 5.0   469512 ( Address: 0xE72C0 Release Date: 01/07/2011)
 # ESXi 5.0u1 623860 ( Address: 0xE72C0 Release Date: 09/21/2011)
+# ESXi 5.0u2 914586 ( Address: 0xE72C0 Release Date: 07/09/2012)
 # ESXi 5.1   799733 ( Address: 0xEA0C0 Release Date: 06/22/2012)
 #
 mainver = "unknown"
@@ -45,6 +46,8 @@ if File.exists?("/usr/sbin/dmidecode")
           case
             when biosdate.match(/09\/21\/2011/)
               update = "u1"
+            when biosdate.match(/07\/09\/2012/)
+              update = "u2"
           end
         when address.match(/EA0C0/)
           mainver = "5.1"
